@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        form {
+            width: 670px;
+            margin: 0 auto;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        td, input {
+            font-size: 20px;
+        }
+
+        th {
+            font-size: 26px;
+            background-color: lightgreen;
+            letter-spacing: 2px;
+        }
+
+        #sub {
+            float: right;
+            margin-left: 10px;
+            position: relative;
+            top: 50px;
+            left: 0px;
+            -webkit-transition: all 0.5s ease-in-out 0.0s;
+            -moz-transition: all 0.5s ease-in-out 0.0s;
+            -ms-transition: all 0.5s ease-in-out 0.0s;
+            -o-transition: all 0.5s ease-in-out 0.0s;
+            transition: all 0.5s ease-in-out 0.0s;
+        }
+    </style>
+</head>
+<body>
+<form target="_blank" action="URL">
+    <!-- 额外的提交按钮 -->
+    <input type="submit" value="提交" id="sub"/>
+    <table bgcolor="#000" cellpadding="10" align="center">
+        <!-- 文本类 -->
+        <tr>
+            <th colspan="2">文本类</th>
+        </tr>
+        <tr>
+            <td>text</td>
+            <td><input type="text" value="attribute:value" pattern="[A-Z,a-z]{1}[a-z,0-9]{3,10}"/></td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>
+                <input type="url" placeholder="attribute:placeholder" value="a:b"/>
+            </td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>
+                <input type="password" maxlength="8" placeholder="请输入密码" autofocus required/>
+            </td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>
+                <input type="email" value="1@2.3"/>
+            </td>
+        </tr>
+        <tr>
+            <td>tel</td>
+            <td><input type="tel"></td>
+        </tr>
+        <tr>
+            <td>search</td>
+            <td><input type="search"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p>“placeholder”：占位符；</p>
+                <p>“autofocus”：焦点获取；</p>
+                <p>“required”；表单必填项；</p>
+                <p>“pattern”；输入规范，该值为一个正则表达式；</p>
+                <p>在H5中，URL和email类型在提交表单时，会检测是否符合格式。</p>
+            </td>
+        </tr>
+        <!-- 文本类 end -->
+
+        <!-- 操作类 -->
+        <tr>
+            <th colspan="2">操作类</th>
+        </tr>
+
+        <tr>
+            <td>checkbox</td>
+            <td>
+                <label><input type="checkbox" name="ch_box"/>box_1</label>
+                <label><input type="checkbox" name="ch_box"/>box_2</label>
+                <label><input type="checkbox" name="ch_box"/>box_3</label>
+                <input type="checkbox" id="ch_box4"/>
+                <label for="ch_box4">box_4</label>
+            </td>
+        </tr>
+        <tr>
+            <td>radio</td>
+            <td>
+                <label><input type="radio" name="radio"/>ra_1</label>
+                <label><input type="radio" name="radio"/>ra_2</label>
+                <label><input type="radio" name="radio"/>ra_3</label>
+                <label><input type="radio" name="radio"/>ra_4</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                label:<br/>
+                非跨度：&lt;label&gt;&lt;input&gt;&lt;/input&gt;&lt;/label&gt;<br/>
+                跨&emsp;度：&lt;label for="input_id"&gt;&lt;/label&gt;<br/>
+                &emsp;&emsp;&emsp;&emsp;&lt;input id="input_id"&gt;&lt;/input&gt;
+            </td>
+        </tr>
+        <tr>
+            <td>file</td>
+            <td>
+                <input type="file" multiple="multiple"/>
+                <p>multiple="multiple"：允许添加多个值；</p>
+                <p>accept="MIME_type";指定上传文件的类型；</p>
+                <p>如：accept="image/jpg,image/gif"</p>
+                <p><a href="http://www.w3school.com.cn/media/media_mimeref.asp" target="_blank">MIME_type 附录表</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td><input type="number" max="100" min="90" step="2"/>
+                <p>只允许输入数字；"e":自然常数;</p></td>
+        </tr>
+        <tr>
+            <td>range</td>
+            <td>
+                <input type="range" max="100" min="0" step="20"/>
+                <p>“value”，默认为50，范围0~100；</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">max：最多值；min：最小值；step：步长；</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td><input type="color" value="#00ff00"/> 数值型：#ffffff；</td>
+        </tr>
+        <!-- 操作类 end -->
+
+        <!-- 表单功能 -->
+        <tr>
+            <th colspan="2">功能类</th>
+        </tr>
+
+        <tr>
+            <td>button</td>
+            <td>
+                <input type="button" value="button"/>
+                <button>This is a button.<img src="img/img1.jpg" width="52"/></button>
+                <p>“button”允许嵌入其他元素；</p>
+            </td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="image" src="img/img2.jpg" width="32"
+                       height="26"/><span>&emsp;H5中使用“width”“height”修改图片大小；</span></td>
+        </tr>
+        <tr>
+            <td>submit</td>
+            <td>
+                <input type="submit"/>
+                <p>get:在url地址上传送参数到服务器;<br/>post:在后台传送参数到服务器; </p>
+            </td>
+        </tr>
+        <tr>
+            <td>reset</td>
+            <td><input type="reset"/></td>
+        </tr>
+        <!-- 表单功能 end -->
+
+        <!-- 日期类型 -->
+        <tr>
+            <th colspan="2">Date 类</th>
+        </tr>
+
+        <tr>
+            <td>date</td>
+            <td><input type="date"/></td>
+        </tr>
+        <tr>
+            <td>month</td>
+            <td><input type="month"/></td>
+        </tr>
+        <tr>
+            <td>week</td>
+            <td><input type="week"/></td>
+        </tr>
+        <tr>
+            <td>time</td>
+            <td><input type="time"/></td>
+        </tr>
+        <tr>
+            <td>datetime</td>
+            <td><input type="datetime" value="2016-08-02T08:32Z"/></td>
+        </tr>
+        <tr>
+            <td>datetime-local</td>
+            <td><input type="datetime-local"/></td>
+        </tr>
+        <!-- 日期类型 end -->
+        <!-- 特殊类 -->
+        <tr>
+            <th colspan="2">特殊类</th>
+        </tr>
+
+        <tr>
+            <td>hidden</td>
+            <td><input type="hidden"/>
+                <p>可用于记录一些表单状态信息<br/>（例如使用value的值标记可选项为非空值的个数），<br/>或者其他自定义信息；</p></td>
+        </tr>
+    </table>
+</form>
+</body>
+<script type="text/javascript">
+    function sub_move() {
+        var s = document.getElementById("sub");
+        window.onscroll = function _scroll() {
+            var top = document.documentElement.scrollTop || document.body.scrollTop;
+            s.style.top = top + 50 + "px";
+        }
+    }
+</script>
+<script type="text/javascript">
+    window.onload = function main() {
+        sub_move();
+    }
+</script>
+</html>
