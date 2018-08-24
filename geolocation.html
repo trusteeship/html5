@@ -13,10 +13,9 @@
   <script type="text/javascript">
     function showPosition(position) {
       var latlon = position.coords.latitude + ',' + position.coords.longitude;
-      var img_url = 'http://maps.googleapis.com/maps/api/staticmap?center='
-      + latlon + '&zoom=14&size=400x300&sensor=false';
+     
       document.getElementById('pos').innerHTML = latlon;
-      document.getElementById('map').innerHTML = '<img src="' + img_url + '" />';
+     
     }
     function success(position){
       console.log('获取位置成功：', position.coords);
@@ -33,6 +32,9 @@
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error, options);
     } else {
+      var p = document.createElement('p');
+      p.innerHTML = '您的浏览器不支持Geolocatioin!';
+      document.body.appendChild(p);
       alert('您的浏览器不支持Geolocatioin!')
     }
 
