@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+body{margin:0;pading:0;background-color:#f7f7f7;}
+.p{width:200px;height:40px;text-align:center;line-height:40px;color：#333；
+font-size:24px;display:none}
+</style>
+</head>
+<body>
+	 <p class="tips"></p>
+	 <script src="jquery/jquery-1.9.1.js"></script>
+<script>
+  //网络监听的事件；
+  //监听当前用户是否在线，通过window.navigator对象的.onLine属性来返回一个布尔值来进行判断；
+  //alert(window.navigator.onLine);
+  if(window.navigator.onLine){
+  alert('网络连接中');
+  }else{
+  alert('网络断开中');
+  }
+  //通过给window绑定online、offline事件来实现网络连接或断开时的事件；
+  window.addEventListener('online',function(){
+    $('.tips').text('网络已连接').fadeIn(500).delay(1000).fadeOut(); 
+  });
+  window.addEventListener('offline',function(){
+    $('.tips').text('网络已断开').fadeIn(500).delay(1000).fadeOut();
+  });
+  //iE低版本用attachEvent()来代替addEventListener();
+  window.attachEvent('online',function(){
+    $('.tips').text('网络已连接').fadeIn(500).delay(1000).fadeOut();
+  });
+
+</script>
+</body>
+</html>
